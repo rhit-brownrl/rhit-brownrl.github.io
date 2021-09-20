@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Merienda&display=swap');
+
+:root {
+    --vertical-space: 2rem;
+    --horizonal-space: 3rem;
+
+    --light-color: #A67772;
+    --body-color: #0D0D0D;
+    --heading-color: #591902;
+    --contrast-color: #8C1C03;
+    --link-color: #595959;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Cairo', sans-serif;
+    color: var(--body-color);
+    background-image: repeating-linear-gradient(67.5deg, hsla(145,0%,97%,0.2) 0px, hsla(145,0%,97%,0.2) 0px,transparent 0px, transparent 1px,hsla(145,0%,97%,0.2) 1px, hsla(145,0%,97%,0.2) 4px,transparent 4px, transparent 5px,hsla(145,0%,97%,0.2) 5px, hsla(145,0%,97%,0.2) 8px),repeating-linear-gradient(0deg, hsla(145,0%,97%,0.2) 0px, hsla(145,0%,97%,0.2) 0px,transparent 0px, transparent 1px,hsla(145,0%,97%,0.2) 1px, hsla(145,0%,97%,0.2) 4px,transparent 4px, transparent 5px,hsla(145,0%,97%,0.2) 5px, hsla(145,0%,97%,0.2) 8px),linear-gradient(135deg, rgb(237, 237, 237),rgb(199, 199, 199));
+}
+
+/* main {
+    background-color: var(--light-color);
+} */
+
+h1, h2, h3 {
+    line-height: 1.2;
+    font-family: 'Merienda', cursive;
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration-color: var(--contrast-color);
+}
+
+a:hover {
+    color: var(--contrast-color);
+}
+
+body#about img {
+    height: 15em;
+}
+
+/* body#portfolio img {
+    height: 25em;
+} */
+
+p {
+    max-width: 50em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+                        "nav nav"
+                        "main main"
+                        "foot foot";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+@media screen and (min-width: 25em) {
+    body {
+        grid-template-areas: "head head"
+                            "nav main"
+                            "foot foot";
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
+body > * {
+    padding-left: var(--horizonal-space);
+    padding-right: var(--horizonal-space);
+}
+
+body > header {
+    grid-area: head;
+}
+
+body > nav {
+    grid-area: nav;
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* body > nav ul li {
+    display: inline;
+    padding-right: 1rem;
+} */
+
+body > main {
+    grid-area: main;
+}
+
+body > footer {
+    grid-area: foot;
+}
+
+
+header, footer {
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--horizonal-space);
+}
+
+header h1, footer h1 {
+    margin: 0;
+}
+
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 25em) {
+    body#portfolio ul#portfolioItems li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+}
