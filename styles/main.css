@@ -38,14 +38,6 @@ a:hover {
     color: var(--contrast-color);
 }
 
-body#about img {
-    height: 15em;
-}
-
-/* body#portfolio img {
-    height: 25em;
-} */
-
 p {
     max-width: 50em;
 }
@@ -60,14 +52,14 @@ body {
     grid-template-rows: auto auto 1fr auto;
 }
 
-@media screen and (min-width: 25em) {
+/* @media screen and (min-width: 25em) {
     body {
         grid-template-areas: "head head"
                             "nav main"
                             "foot foot";
         grid-template-rows: auto 1fr auto;
     }
-}
+} */
 
 body > * {
     padding-left: var(--horizonal-space);
@@ -87,10 +79,10 @@ body > nav ul {
     padding: 0;
 }
 
-/* body > nav ul li {
-    display: inline;
-    padding-right: 1rem;
-} */
+body > nav ul li {
+    display: inline-block;
+    padding: 0px 3px;
+}
 
 body > main {
     grid-area: main;
@@ -110,6 +102,10 @@ header h1, footer h1 {
     margin: 0;
 }
 
+#avatar img {
+    height: 20em;
+}
+
 body#portfolio ul#portfolioItems {
     display: flex;
     flex-wrap: wrap;
@@ -118,14 +114,52 @@ body#portfolio ul#portfolioItems {
     padding: 0;
 }
 
-@media screen and (min-width: 25em) {
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
+}
+
+#resumePDF {
+    width: 90vw;
+    height: 100vh;
+}
+
+.dot {
+    width: 50px;
+    /* background-color: white; */
+    filter: invert(12%) sepia(91%) saturate(3652%) hue-rotate(18deg) brightness(93%) contrast(103%);
+    border-radius: 50%;
+    display: inline-block;
+    position: fixed;
+    /* bottom: -130px; */
+    bottom: 22px;
+    right: 0px;
+    text-align: center;
+    display: none;
+}
+
+@media screen and (min-width: 40em) {
     body#portfolio ul#portfolioItems li {
         flex-basis: 48%;
         padding-right: 2%;
     }
+
+    body#about #aboutContent {
+        display: flex;
+        flex-wrap: nowrap;
+        flex: 1;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #aboutText {
+        flex-basis: auto;
+    }
+
+    #avatar {
+        flex-basis: auto;
+        padding-right: 10px;    
+    }
+
 }
 
 
-body#portfolio ul#portfolioItems li img {
-    max-width: 100%;
-}
